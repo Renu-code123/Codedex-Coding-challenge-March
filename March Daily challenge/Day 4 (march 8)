@@ -1,5 +1,23 @@
 ## **Daylight Savings**
-Python:
+
+**Problem **:-
+Daylight Saving Time causes people to lose
+one hour of sleep when the clock "springs forward".
+
+This can lead to sleep debt — the difference
+between the sleep someone planned to get
+and the sleep they actually got.
+
+Formula:
+Sleep Debt = max(0, Planned Sleep − Actual Sleep)
+
+Task:
+• Calculate the total sleep debt for the week
+• Add +1 hour for Daylight Savings
+• Find the longest streak of consecutive days
+  where sleep debt occurred
+
+**Python Code **:
 def calculate_sleep_debt(planned, actual):
     total_debt = 0
     current_streak = 0
