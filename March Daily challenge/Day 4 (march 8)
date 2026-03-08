@@ -21,4 +21,19 @@ def calculate_sleep_debt(planned, actual):
 
 
 ##**Approach**
+1. Iterate through both lists (planned and actual sleep)
+   using zip().
 
+2. For each day, calculate sleep debt:
+   debt = max(0, planned - actual)
+
+3. Add the daily debt to the total weekly sleep debt.
+
+4. Track consecutive days where debt > 0
+   to find the longest streak.
+
+5. Add +1 hour to the total debt
+   Due to Daylight Saving Time.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
