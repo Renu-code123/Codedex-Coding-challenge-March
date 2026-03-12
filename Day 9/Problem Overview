@@ -1,0 +1,114 @@
+# 🌐 World Wide Web – URL Validator
+
+A Python implementation to check whether a given web address is a **valid URL** based on basic validation rules.
+
+This challenge is inspired by the creation of the **World Wide Web** by Tim Berners-Lee in 1989.
+
+---
+
+## 📌 Problem Overview
+
+Given a string representing a web address, determine whether it is **valid** or **invalid** based on the following conditions:
+
+1. The address must start with `http://` or `https://`.
+2. The domain must contain **at least one dot (`.`)**.
+3. The domain can only contain:
+
+   * Letters (`a-z`, `A-Z`)
+   * Digits (`0-9`)
+   * Hyphen (`-`)
+   * Dot (`.`)
+
+Return:
+
+* `"valid"` if the address follows all rules
+* `"invalid"` otherwise
+
+---
+
+## 💡 Idea
+
+The main idea is to **separate the protocol and the domain**, then validate the domain based on required rules.
+
+Steps involved:
+
+* Verify the URL protocol (`http` or `https`)
+* Extract the domain portion
+* Ensure the domain contains at least one dot
+* Validate each character to ensure it belongs to the allowed set
+
+---
+
+## ⚙️ Approach
+
+1. Check if the address starts with `http://` or `https://`.
+2. Remove the protocol part to extract the domain.
+3. Check if the domain contains at least one `.`.
+4. Iterate through each character in the domain:
+
+   * Allow only alphanumeric characters, `-`, or `.`.
+5. If any invalid character is found, return `"invalid"`.
+6. Otherwise return `"valid"`.
+
+---
+
+## 🧠 Pseudocode
+
+```
+FUNCTION check_url(address)
+
+    IF address starts with "http://"
+        domain = address after "http://"
+    ELSE IF address starts with "https://"
+        domain = address after "https://"
+    ELSE
+        RETURN "invalid"
+
+    IF "." not in domain
+        RETURN "invalid"
+
+    FOR each character in domain
+        IF character is not letter AND
+           not digit AND
+           not '-' AND
+           not '.'
+           RETURN "invalid"
+
+    RETURN "valid"
+```
+
+---
+
+## 🐍 Python Implementation
+
+```python
+def check_url(address):
+    if address.startswith("http://"):
+        domain = address[7:]
+    elif address.startswith("https://"):
+        domain = address[8:]
+    else:
+        return "invalid"
+
+    if "." not in domain:
+        return "invalid"
+
+    for c in domain:
+        if not (c.isalnum() or c in "-."):
+            return "invalid"
+
+    return "valid"
+```
+
+---
+
+## 📊 Example
+
+| Input                   | Output  |
+| ----------------------- | ------- |
+| https://codedex.io      | valid   |
+| https://netflixcom      | invalid |
+| http://en.wikipedia.org | valid   |
+
+---
+
