@@ -1,0 +1,26 @@
+# 🏎️ Palindrome Checker | Codédex Daily Challenge
+
+📅 **Date:** March 13, 2026  
+
+
+## 📖 Problem
+A **palindrome** is a sequence that reads the same forward and backward.
+
+Examples:
+- racecar
+- taco cat
+- level
+- 12321
+
+We needed to write a function that checks whether a given string is a palindrome while:
+- Ignoring **spaces**
+- Ignoring **capitalization**
+
+---
+
+## 🧠 Solution
+
+```python
+def check_palindrome(sequence):
+    sequence = sequence.replace(" ", "").lower()
+    return sequence == sequence[::-1]
