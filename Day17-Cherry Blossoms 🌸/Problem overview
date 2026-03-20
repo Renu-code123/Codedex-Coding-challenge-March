@@ -1,0 +1,50 @@
+# 🌸 Cherry Blossoms Problem
+
+Every spring, cherry blossoms bloom when the temperature conditions are just right.  
+Your task is to predict the **first bloom day** based on temperature data.
+
+---
+
+## 🧩 Problem Statement
+
+Given a list of daily temperatures, return the **day number (1-indexed)** when the **5-day rolling average temperature first exceeds 15°C**.
+
+If it never happens, return `-1`.
+
+---
+
+## 💡 Approach
+
+We use a **Sliding Window (size = 5)** technique:
+
+- Calculate the sum of the first 5 elements
+- Slide the window across the array:
+  - Add next element
+  - Remove previous element
+- Check if the average exceeds `15`
+- Return the first valid day
+
+---
+
+## 🚀 Solution (Python)
+
+```python
+def cherry_blossoms(temps):
+    n = len(temps)
+    
+    if n < 5:
+        return -1
+    
+    window_sum = sum(temps[:5])
+    
+    if window_sum / 5 > 15:
+        return 5
+    
+    for i in range(5, n):
+        window_sum += temps[i]
+        window_sum -= temps[i - 5]
+        
+        if window_sum / 5 > 15:
+            return i + 1
+    
+    return -1
