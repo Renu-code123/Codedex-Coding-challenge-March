@@ -1,0 +1,131 @@
+# 💧 Water Day Challenge — Leaky Pipe Problem
+
+## 🌍 Overview
+
+On **World Water Day (March 22)**, this challenge highlights a real-world issue:
+**water loss due to leaking pipes**.
+
+Every hour, a pipe loses a fixed percentage of its water. If the water level drops below a certain threshold, the pipe fails.
+
+---
+
+## 🧩 Problem Statement
+
+You are given:
+
+* `volume` → Initial water volume
+* `leak` → Percentage of water lost per hour
+* `hours` → Total time in hours
+* `threshold` → Minimum required volume
+
+### 🔧 Task:
+
+* Simulate water loss **hour by hour**
+* If volume drops **below threshold**, return `-1`
+* Otherwise, return the **remaining volume rounded to 2 decimal places**
+
+---
+
+## 🧠 Approach
+
+* Loop through each hour
+
+* Reduce volume using:
+
+  ```
+  volume = volume * (1 - leak / 100)
+  ```
+
+* After each update:
+
+  * Check if `volume < threshold`
+  * If yes → return `-1`
+
+* If all hours complete → return rounded result
+
+---
+
+## 💻 Implementation (Python)
+
+```python
+def leaky_pipe(volume, leak, hours, threshold):
+    for _ in range(hours):
+        volume = volume * (1 - leak / 100)
+        
+        if volume < threshold:
+            return -1
+    
+    return round(volume, 2)
+```
+
+---
+
+## 🔍 Examples
+
+### ✅ Example 1
+
+**Input:**
+
+```
+volume = 1000
+leak = 5
+hours = 3
+threshold = 100
+```
+
+**Output:**
+
+```
+857.38
+```
+
+---
+
+### ❌ Example 2
+
+**Input:**
+
+```
+volume = 200
+leak = 30
+hours = 6
+threshold = 100
+```
+
+**Output:**
+
+```
+-1
+```
+
+---
+
+## ⚡ Time Complexity
+
+* **O(hours)** → Iterates once per hour
+* Space Complexity: **O(1)**
+
+---
+
+## 🚀 Key Insight
+
+Although the formula can be written as:
+
+```
+volume * (1 - leak/100) ** hours
+```
+
+We **cannot directly use it** because:
+
+* The pipe may fail **before all hours are completed**
+
+---
+
+## 🛠️ Edge Cases Considered
+
+* Immediate failure (first hour)
+* No leak (`leak = 0`)
+* Threshold already higher than initial volume
+* Large number of hours
+
+---
