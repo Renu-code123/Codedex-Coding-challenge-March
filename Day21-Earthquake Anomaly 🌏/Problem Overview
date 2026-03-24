@@ -1,0 +1,63 @@
+# 🌏 Earthquake Anomaly Detection
+
+## 📌 Problem Overview
+
+Seismographs record earthquake magnitudes around the world. Most readings are small, but sometimes a sudden spike can indicate a major seismic event.
+
+To identify unusual activity, a reading is considered **suspicious** if it is **greater than 1.5× the median** of all readings.
+
+The **median** is used instead of the mean because earthquake data is often skewed by extreme values.
+
+---
+
+## 🧠 Objective
+
+Given a list of magnitude readings, return the **indices** of all suspicious readings.
+
+If no anomalies are found, return an empty list.
+
+---
+
+## ⚙️ Approach
+
+1. Handle edge case (empty list)
+2. Sort the readings to compute the median
+3. Calculate threshold → `1.5 × median`
+4. Traverse the original list
+5. Collect indices where value exceeds threshold
+6. Return result
+
+---
+
+## 🧮 Median Rules
+
+- Odd number of elements → middle value  
+- Even number of elements → average of two middle values  
+
+---
+
+## 💻 Implementation (Python)
+
+```python
+def earthquake_anomaly(readings):
+    n = len(readings)
+    
+    # Edge case: empty input
+    if n == 0:
+        return []
+    
+    sorted_readings = sorted(readings)
+    
+    if n % 2 == 1:
+        median = sorted_readings[n // 2]
+    else:
+        median = (sorted_readings[n // 2 - 1] + sorted_readings[n // 2]) / 2
+    
+    threshold = 1.5 * median
+    
+    result = []
+    for i in range(n):
+        if readings[i] > threshold:
+            result.append(i)
+    
+    return result
