@@ -83,6 +83,8 @@ Day-31
 | Day 23 | 24-03-2026 | Earthquake Anomaly 🌍 | Completed |
 | Day 24 | 25-03-2026 | Opening Day ⚾ | Completed |
 | Day 25| 26-03-2026 |[ Flatten Array 🪜](https://www.codedex.io/daily-challenge/2026-03-26) | Completed |
+| Day 26| 27-03-2026 |[ Infinite Monkey Theorem 🐒](https://www.codedex.io/daily-challenge/2026-03-27) | Completed |
+
 
 ---
 ## 🔗 Connect with Me on Codédex
