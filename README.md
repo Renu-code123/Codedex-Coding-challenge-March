@@ -86,6 +86,7 @@ Day-31
 | Day 26| 27-03-2026 |[ Infinite Monkey Theorem 🐒](https://www.codedex.io/daily-challenge/2026-03-27) | Completed |
 | Day 27| 28-03-2026 |[28 Days Later 🧟](https://www.codedex.io/daily-challenge/2026-03-28) | Completed |
 | Day 28| 29-03-2026 |[Leaderboard Stats 📊](https://www.codedex.io/daily-challenge/2026-03-29) | Completed |
+| Day 29| 30-03-2026 |[Ye Olde Emoticons 📰](https://www.codedex.io/daily-challenge/2026-03-30) | Completed |
 
 
 
