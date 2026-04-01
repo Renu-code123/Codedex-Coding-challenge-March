@@ -58,8 +58,8 @@ Day-31
 
 | Day   | Date       | Problem | Status |
 |------|------------|--------|--------|
-| Day 1 | 02-03-2026 | Wordle 🟩 | Pending |
-| Day 2 | 03-03-2026 | Blood Moon 🩸 | Pending |
+| Day 1 | 02-03-2026 | Wordle 🟩 | Completed at end|
+| Day 2 | 03-03-2026 | Blood Moon 🩸 | Completed at end |
 | Day 3 | 04-03-2026 | Holi 🌈 | Completed |
 | Day 4 | 05-03-2026 | Homebrew Computer Club 🤓 | Completed |
 | Day 5 | 06-03-2026 | Alysa Liu 🛼 | Completed |
